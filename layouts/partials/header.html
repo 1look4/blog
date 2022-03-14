@@ -54,10 +54,6 @@
 					{{ $active := in $cur.RelPermalink .URL }}
 					<a class="{{ if $active }} active {{ end }}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
 				{{ end }}
-
-				<a href="{{ .Site.BaseURL }}/index.xml">
-					<img src="{{ .Site.BaseURL }}/static/images/feed.svg" alt="Subscribe to feed" />
-				</a>
 			</nav>
 		</div>
 

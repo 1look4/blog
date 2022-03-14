@@ -10,6 +10,36 @@
 			</div>
 			<!-- <a class="twitter-timeline" data-width="520" data-height="600" href="https://twitter.com/anikethjain?ref_src=twsrc%5Etfw">Tweets by anikethjain</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 			
+			<div class="posts">
+				{{ $paginator := .Paginate (where .Pages "Params.hidden" "ne" true) }}
+				{{ range $paginator.Pages }}
+					{{ $u := urls.Parse .Params.link }}
+		
+					<div class="post">
+				<div class="date">
+					<span class="day">{{ .Date | dateFormat "02" }}</span>
+					<span class="year">{{ .Date | dateFormat "Jan 2006" }}</span>
+				</div>
+				<div class="body">
+					<h4 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+					{{ if .Params.link }}
+						<span class="domain">{{ replace $u.Host "www." "" }}</span>
+					{{ end }}
+							<div class="description">
+								{{ if isset .Params "description" }}
+									{{ .Description }}
+								{{ else if gt (len .RawContent) 120 }}
+									{{ slicestr .RawContent 0 120 }}...
+								{{ else }}
+									{{ .RawContent }}
+								{{ end }}
+							</div>
+						</div>
+					</div>
+				{{ end }}
+		
+			</div>
+			
 			<div class="tags">
 				{{ if ne .Type "page" }}
 					{{ if gt .Params.tags 0 }}
@@ -21,6 +51,10 @@
 					{{ end }}
 				{{ end }}
 			</div>
+		</div>
+
+		<div class="content">
+			<span>Find me on <a href="https://www.linkedin.com/in/anikethjain">LinkedIn</a> and <a href="https://twitter.com/anikethjain">Twitter</a></span>
 		</div>
 	</div>
 {{ partial "footer.html" . }}

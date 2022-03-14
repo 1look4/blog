@@ -26,6 +26,3 @@ My investment thesis is very simple to invest in known people who have been conn
 
 ------
 
-*Published on 01th January 2022.*
-
-Find me on [LinkedIn](https://www.linkedin.com/in/anikethjain) and [Twitter](https://twitter.com/anikethjain).
