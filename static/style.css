@@ -13,6 +13,7 @@ html, body {
 body {
     font-family: Inter, sans-serif;
     font-weight: 400;
+    background: #f6f6f6;
     color: #333;
     line-height: 1.7em;
     font-size: 17px;
@@ -210,6 +211,7 @@ ul.flat li {
 
 .wrap {
     margin: 0 auto;
+    background: #fff;
     padding: 60px 30px 30px 30px;
 }
 
